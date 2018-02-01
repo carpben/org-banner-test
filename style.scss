@@ -23,7 +23,7 @@ p {   font-size: calc(13px + 0.33vw);   }
       justify-content: space-between;
       h2 {    margin-top: 0;   }
       .text-w {   margin-bottom: 20px;    }
-      #toggle-img-row {display: none;}
+      .toggle-img-row {display: none;}
       .img-row {
          display: flex;
          justify-content: space-between;
@@ -46,7 +46,7 @@ p {   font-size: calc(13px + 0.33vw);   }
    }
    @media screen and (max-width: 500px){
       .sec {
-         #toggle-img-row {display: block;}
+         .toggle-img-row {display: block;}
          .hide-small{display: none;}
          .img-row { flex-direction: column;}
          .element {padding: 10px; }

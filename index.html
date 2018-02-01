@@ -20,7 +20,7 @@
             <p>;lkj;kjasdf </p>
             <a href="#">lk;j; </a>
          </div>
-         <a href="#" type="button" id="toggle-img-row">Toggle Images</a>
+         <a href="#" type="button" class="toggle-img-row">Toggle Images</a>
          <div class="img-row hide-small">
             <div class="element"><figure style="background-image:url('https://d141thk7ygtt3c.cloudfront.net/fd8d6ca7-ca5b-4dc8-91b4-130950b4515d.jpg')" ></figure></div>
             <div class="element"><figure style="background-image:url('https://d141thk7ygtt3c.cloudfront.net/97feadb6-89af-46ab-ac8d-9f215f498e3c.jpg')" ></figure></div>
@@ -41,6 +41,7 @@
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
             <a href="#">https://www.lipsum.com/</a>
          </div>
+         <a href="#" type="button" class="toggle-img-row"></a>
          <div class="img-row hide-small">
             <div class="element"><figure style="background-image:url('https://d141thk7ygtt3c.cloudfront.net/fd8d6ca7-ca5b-4dc8-91b4-130950b4515d.jpg')" ></figure></div>
             <div class="element"><figure style="background-image:url('https://d141thk7ygtt3c.cloudfront.net/97feadb6-89af-46ab-ac8d-9f215f498e3c.jpg')" ></figure></div>
@@ -51,9 +52,18 @@
    </div>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
    <script>
-      $('#toggle-img-row').click( function(){
-         $(this).next().removeClass('hide-small')
-      } )
+      $('document').ready( function(){
+         var text1 = "Show More Images";
+         var text2 = "Show Less Images";
+         var btnText = text1
+         $('.toggle-img-row').text(btnText);
+         $('.toggle-img-row').click( function(){
+            event.preventDefault();
+            $(this).next().toggleClass('hide-small');
+            $(this).text( $(this).text()===text1 ? text2 : text1 )
+         } )
+      })
+
    </script>
 
 </body>
